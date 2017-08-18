@@ -1,0 +1,129 @@
+﻿<div ng-controller="auditController">
+
+    <umb-panel>
+        <div ng-if="error">
+            Error
+        </div>
+
+        <umb-header ng-if="!loading && !error">
+            <div class="umb-panel-header-content-wrapper">
+                <div class="umb-panel-header-content">
+                    <div class="umb-panel-header-name">
+                        {{changes.NodeName}} ({{changes.Changes.length}} changes)
+                    </div>
+                </div>
+            </div>
+        </umb-header>
+
+        <div ng-if="loading">
+            <umb-load-indicator></umb-load-indicator>
+        </div>
+
+        <div class="umb-panel-body umb-scrollable row-fluid" ng-if="!loading && !error">
+            <div class="tab-content form-horizontal">
+                <div class="umb-pane">
+
+                    <div class="umb-sub-header">
+                        <div class="btn-group">
+
+                            <label for="hideZeroChanges">
+                                <input type="checkbox" ng-model="hideZeroChanges" name="viewZeroChanges" id="hideZeroChanges"/>
+                                Hide Zero Changes
+                            </label>
+                        </div>
+
+                        <form class="form-search pull-right ng-pristine ng-valid" novalidate
+                        <div class="inner-addon left-addon">
+                            <i class="icon icon-search"></i>
+                            <input type="text" class="form-control ng-pristine ng-valid" localize="placeholder" placeholder="Type to search..." ng-model="searchFilter" prevent-enter-submit="" no-dirty-check="">
+                        </div>
+                        </form>
+
+                    </div>
+
+                    <div class="umb-listview">
+                        <div class="audit__change-list-wrapper">
+                            <div class="audit__change-list">
+                                <div class="audit__change-list-row audit__change-list-header">
+                                    <div class="audit__change-list-clickable audit__change-item" ng-click="order('Author')">
+                                        Author
+                                        <span ng-show="sortType === 'Author' && !sortReverse"
+                                              class="fa fa-caret-down"></span>
+                                        <span ng-show="sortType === 'Author' && sortReverse" class="fa fa-caret-up"></span>
+                                    </div>
+
+                                    <div class="audit__change-list-clickable audit__change-item" ng-click="order('ChangeDateTime')">
+                                        Date
+                                        <span ng-show="sortType === 'ChangeDateTime' && !sortReverse" class="fa fa-caret-down"></span>
+                                        <span ng-show="sortType === 'ChangeDateTime' && sortReverse" class="fa fa-caret-up"></span>
+                                    </div>
+
+                                    <div class="audit__change-list-clickable audit__change-item" ng-click="order('PropertyChanges')">
+                                        Changes
+                                        <span ng-show="sortType === 'PropertyChanges' && !sortReverse" class="fa fa-caret-down"></span>
+                                        <span ng-show="sortType === 'PropertyChanges' && sortReverse" class="fa fa-caret-up"></span>
+                                    </div>
+
+                                    <div class="audit__change-item">
+                                    </div>
+                                </div>
+
+                                <div class="audit__change-list">
+                                    <div class="audit__change-list-row" ng-repeat="c in changes.Changes  | filter:searchFilter| filter:(hideZeroChanges && {PropertyChanges: '!!'}) | orderBy:sortType:sortReverse">
+                                        <div class="audit__change-item audit__change-item--author">
+                                            {{c.Author}}
+                                        </div>
+
+                                        <div class="audit__change-item audit__change-item--change-date-time">
+                                            {{c.ChangeDateTime | date: 'medium'}}
+                                        </div>
+
+                                        <div class="audit__change-item audit__change-item--property-changes">
+                                            {{c.PropertyChanges.length}}
+                                        </div>
+
+                                        <div class="audit__change-item">
+                                            <div ng-if="c.PropertyChanges" class="audit__change-list-clickable" ng-click="c.showChanges = !c.showChanges">
+                                                {{c.showChanges ? "hide changes" : "show changes"}}
+                                                <span ng-show="c.showChanges" class="fa fa-times"></span>
+                                                <span ng-show="!c.showChanges" class="fa fa-bars"></span>
+                                            </div>
+                                        </div>
+
+                                        <div class="audit__change-list-wrapper" ng-if="c.showChanges && c.PropertyChanges">
+                                            <div class="audit__change-list">
+                                                <div class="audit__change-list-changes-row audit__change-list-header">
+                                                    <div class="audit__change-item">
+                                                        Property
+                                                    </div>
+                                                    <div class="audit__change-item">
+                                                        From
+                                                    </div>
+                                                    <div class="audit__change-item">
+                                                        To
+                                                    </div>
+                                                </div>
+
+                                                <div class="audit__change-list-changes-row" ng-repeat="pc in c.PropertyChanges">
+                                                    <div class="audit__change-item">
+                                                        {{pc.PropertyName}}
+                                                    </div>
+                                                    <div class="audit__change-item" ng-class="{'audit__change-item--null': pc.From === null}">
+                                                        {{pc.From === null ? "(no previous value)" : pc.From}}
+                                                    </div>
+                                                    <div class="audit__change-item" ng-class="{'audit__change-item--null': pc.To === null}">
+                                                        {{pc.To === null ? "(no new value)" : pc.To}}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </umb-panel>
+</div>

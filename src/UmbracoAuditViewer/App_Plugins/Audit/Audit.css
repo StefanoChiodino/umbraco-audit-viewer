@@ -1,0 +1,62 @@
+﻿.audit__change-list-clickable {
+    cursor: pointer;
+    cursor: hand;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+.audit__change-list .audit__change-list-header {    
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    background-color: #fff;
+}
+
+.audit__change-item {
+    padding: 8px;
+    line-height: 20px;
+    text-align: left;
+    vertical-align: top;
+    border-top: 1px solid #dbdbdb;
+}
+
+.audit__change-item--null {
+    font-style: italic;
+    color: #aaa;
+}
+
+.audit__change-list-row {
+    grid-template-columns: 30% 30% 20% 20%;
+    display: grid;
+    background-color: white;
+}
+
+.audit__change-list-changes-row {
+    grid-template-columns: 50% 1fr 1fr;
+    display: grid;
+    background-color: white;
+}
+
+.audit__change-list-row:nth-child(even),
+.audit__change-list-changes-row:nth-child(even) {
+    background: #f8f8f8;
+}
+
+.audit__change-list-wrapper {
+    grid-column-start: 1;
+    grid-column-end: -1;
+    border: 1px solid #d9d9d9;
+    border-top: 0;
+    clear: both;
+    margin: 30px;
+    margin-top: 0;
+}
+
+.audit__change-list-wrapper .audit__change-list-wrapper {
+    margin: 20px;
+    margin-top: 10px;
+}

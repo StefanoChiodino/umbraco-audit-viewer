@@ -1,0 +1,9 @@
+﻿{
+	javascript: [
+		'~/App_Plugins/Audit/Audit.resource.js',
+		'~/App_Plugins/Audit/Audit.controller.js'
+	],
+	css: [
+		'~/App_Plugins/Audit/Audit.css'
+	]
+}
