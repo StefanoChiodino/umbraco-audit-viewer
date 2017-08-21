@@ -73,11 +73,11 @@
   <PropertyGroup>
     <BuildConfig>Release</BuildConfig>
     <RootDir>$(MSBuildProjectDirectory)\..</RootDir>
-    <CoreProjectDir>$(RootDir)\Test</CoreProjectDir>
+    <CoreProjectDir>$(RootDir)\src\UmbracoAuditViewer`</CoreProjectDir>
     <BuildUmbDir>$(MSBuildProjectDirectory)\_umbraco</BuildUmbDir>
     <BuildNuGetDir>$(MSBuildProjectDirectory)\_nuget</BuildNuGetDir>
     <ArtifactsDir>$(MSBuildProjectDirectory)\artifacts</ArtifactsDir>
-    <GruntProjectDir>$(RootDir)\Angular</GruntProjectDir>
+    <!-- <GruntProjectDir>$(RootDir)\Angular</GruntProjectDir> -->
   </PropertyGroup>
 
   <!-- TARGETS -->
@@ -107,18 +107,18 @@
 
 	<!-- COMPILE -->
 	<Target Name="Compile" DependsOnTargets="UpdateAssemblyInfo">
-		<MSBuild Projects="$(CoreProjectDir)\Test.csproj" Properties="Configuration=$(BuildConfig)"/>
+		<MSBuild Projects="$(CoreProjectDir)\UmbracoAuditViewer.csproj" Properties="Configuration=$(BuildConfig)"/>
 	</Target>
 
 	<!-- PREPARE FILES -->
 	<Target Name="PrepareFiles" DependsOnTargets="Compile">
 		<ItemGroup>
-			<BinFiles Include="$(CoreProjectDir)\Bin\$(BuildConfig)\Test.dll" />
-      <PdbFiles Include="$(CoreProjectDir)\Bin\$(BuildConfig)\Test.pdb" />
+			<BinFiles Include="$(CoreProjectDir)\Bin\$(BuildConfig)\UmbracoAuditViewer.dll" />
+      <PdbFiles Include="$(CoreProjectDir)\Bin\$(BuildConfig)\UmbracoAuditViewer.pdb" />
       <SrcFiles Include="$(CoreProjectDir)\**\*.cs" Exclude="$(CoreProjectDir)\obj\**"/>
 			<PackageFile Include="$(MSBuildProjectDirectory)\package.xml" />
       <NuSpecFile Include="$(MSBuildProjectDirectory)\package.nuspec" />
-      <GruntProjectFiles Include="$(GruntProjectDir)\dist\**\*" />
+      <!-- <GruntProjectFiles Include="$(GruntProjectDir)\dist\**\*" /> -->
     </ItemGroup>
     <Copy SourceFiles="@(BinFiles)" DestinationFolder="$(BuildUmbDir)\bin" />
     <Copy SourceFiles="@(PackageFile)" DestinationFolder="$(BuildUmbDir)" />
