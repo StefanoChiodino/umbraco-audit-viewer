@@ -113,8 +113,8 @@
 	<!-- PREPARE FILES -->
 	<Target Name="PrepareFiles" DependsOnTargets="Compile">
 		<ItemGroup>
-			<BinFiles Include="$(CoreProjectDir)\Bin\$(BuildConfig)\UmbracoAuditViewer.dll" />
-      <PdbFiles Include="$(CoreProjectDir)\Bin\$(BuildConfig)\UmbracoAuditViewer.pdb" />
+			<BinFiles Include="$(CoreProjectDir)\Bin\UmbracoAuditViewer.dll" />
+      <PdbFiles Include="$(CoreProjectDir)\Bin\UmbracoAuditViewer.pdb" />
       <SrcFiles Include="$(CoreProjectDir)\**\*.cs" Exclude="$(CoreProjectDir)\obj\**"/>
 			<PackageFile Include="$(MSBuildProjectDirectory)\package.xml" />
       <NuSpecFile Include="$(MSBuildProjectDirectory)\package.nuspec" />
