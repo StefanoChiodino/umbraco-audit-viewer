@@ -3,6 +3,6 @@ ECHO APPVEYOR_REPO_TAG: %APPVEYOR_REPO_TAG%
 ECHO APPVEYOR_BUILD_NUMBER : %APPVEYOR_BUILD_NUMBER%
 ECHO APPVEYOR_BUILD_VERSION : %APPVEYOR_BUILD_VERSION%
 
-Call Tools\nuget.exe restore ..\UmbracoAuditViewer.sln
+Call nuget restore ..\UmbracoAuditViewer.sln
 cd ..\BuildPackage\
 Call "%programfiles(x86)%\MSBuild\14.0\Bin\MsBuild.exe" package.proj
