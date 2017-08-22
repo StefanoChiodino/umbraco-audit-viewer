@@ -18,7 +18,7 @@ deploy:
      # MyGet Deployment for builds & releases
   - provider: NuGet
     #server: https://www.myget.org/F/appveyorumbracopackage/
-    symbol_server: https://ci.appveyor.com/nuget/umbraco-audit-viewer-wgol7reug1el
+    #symbol_server: https://ci.appveyor.com/nuget/umbraco-audit-viewer-wgol7reug1el
     api_key:
       secure: usS1RPtPAg/YZaJCeh2xxFPZ7bp+t0rddYjz/yEYSRMKEHDK0/8VyvQFl6GIW6mC
     artifact: /.*\.nupkg/
