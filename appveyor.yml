@@ -15,23 +15,6 @@ artifacts:
   - path: src\BuildPackage\artifacts\*.zip
 
 deploy:
-     # MyGet Deployment for builds & releases
-  - provider: NuGet
-    #server: https://www.myget.org/F/appveyorumbracopackage/
-    #symbol_server: https://ci.appveyor.com/nuget/umbraco-audit-viewer-wgol7reug1el
-    api_key:
-      secure: usS1RPtPAg/YZaJCeh2xxFPZ7bp+t0rddYjz/yEYSRMKEHDK0/8VyvQFl6GIW6mC
-    artifact: /.*\.nupkg/
-    on:
-      branch: master
-
-     # GitHub Deployment for releases
-  # - provider: GitHub
-  #   auth_token:
-  #     secure: c0LwOGqoFZIieyy8CHrUtYQOD0HL0rG5tV2DS+8FHv34BKs/LSGGtmWWep5O7GbV
-  #   artifact: /.*\.zip/            # upload all Zip packages to release assets
-  #   draft: false
-  #   prerelease: false
-  #   on:
-  #     branch: master
-  #     appveyor_repo_tag: true        # deploy on tag push only
+- provider: NuGet
+  api_key:
+    secure: opCTB0nZo4aaqwSz/zDFknCgOvLTASwKqMdSxCokAwqB8pqFh+WwzSjkyvx/EuIt
