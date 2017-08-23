@@ -1,36 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
 using Newtonsoft.Json;
 using Umbraco.Core.Models;
 using Umbraco.Core.Models.Membership;
 using Umbraco.Web.Editors;
+using Umbraco.Web.Mvc;
+using UmbracoAuditViewer.Models;
 
 namespace UmbracoAuditViewer.Controllers
 {
+    [PluginController(Constants.ApplicationAlias)]
     public class AuditController : UmbracoAuthorizedJsonController
     {
-        public class Response
-        {
-            public string NodeName { get; set; }
-            public List<Change> Changes { get; set; }
-        }
-
-        public class Change
-        {
-            public string Author { get; set; }
-            public DateTime ChangeDateTime { get; set; }
-            public List<PropertyChange> PropertyChanges { get; set; }
-        }
-
-        public class PropertyChange
-        {
-            public string PropertyName { get; set; }
-            public object From { get; set; }
-            public object To { get; set; }
-        }
-
         [HttpGet]
         public Response GetChanges(int id)
         {

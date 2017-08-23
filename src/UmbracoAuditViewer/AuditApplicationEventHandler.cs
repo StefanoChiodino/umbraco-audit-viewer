@@ -24,7 +24,7 @@ namespace UmbracoAuditViewer
             base.ApplicationStarted(umbracoApplication, applicationContext);
 
             applicationContext.Services.SectionService.MakeNew(
-                "Audit", "audit", "icon-search");
+                Constants.ApplicationName, Constants.ApplicationAlias, Constants.ApplicationIcon);
         }
 
         /// <summary>

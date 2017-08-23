@@ -12,8 +12,8 @@ using Umbraco.Web.Trees;
 
 namespace UmbracoAuditViewer.Controllers
 {
-    [Tree("audit", "audit", "Audit", sortOrder: 0)]
-    [PluginController("audit")]
+    [Tree(Constants.ApplicationAlias, Constants.ApplicationAlias, Constants.ApplicationName)]
+    [PluginController(Constants.ApplicationName)]
     public class AuditTreeController : TreeController
     {
         private readonly ImmutableList<int> _configuredRootNodeIds = GetAppSettingsRootNodeIds();
