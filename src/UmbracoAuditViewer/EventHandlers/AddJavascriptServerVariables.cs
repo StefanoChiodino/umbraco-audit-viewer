@@ -10,7 +10,7 @@ using UmbracoAuditViewer.Controllers;
 
 namespace UmbracoAuditViewer.EventHandlers
 {
-    public class AddJavascriptServerVariable : ApplicationEventHandler
+    public class AddJavascriptServerVariables : ApplicationEventHandler
     {
         protected override void ApplicationStarting(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)
         {
