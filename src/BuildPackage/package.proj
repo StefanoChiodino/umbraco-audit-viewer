@@ -16,22 +16,22 @@
 
   <!-- SHARED PROPERTIES -->
   <PropertyGroup>
-    <PackageName>AppVeyorUmbracoPackage</PackageName>
-    <MinUmbracoVersion>7.1.5</MinUmbracoVersion>
-    <Readme>Soemthing fun for Umbraco</Readme>
-    <AuthorName>The Umbraco Community</AuthorName>
-    <AuthorUrl>http://our.umbraco.org</AuthorUrl>
+    <PackageName>UmbracoAuditViewer</PackageName>
+    <MinUmbracoVersion>7.3.0</MinUmbracoVersion>
+    <Readme>A better audit viewer for Umbraco</Readme>
+    <AuthorName>Stefano Chiodino</AuthorName>
+    <AuthorUrl>https://stefano.chiodino.uk</AuthorUrl>
     <PackageLicenseName>MIT license</PackageLicenseName>
     <PackageLicenseUrl>http://www.opensource.org/licenses/mit-license.php</PackageLicenseUrl>
-    <ProjectUrl>https://github.com/Jeavon/AppVeyorUmbracoPackage</ProjectUrl>
+    <ProjectUrl>https://github.com/StefanoChiodino/umbraco-audit-viewer</ProjectUrl>
   </PropertyGroup>
 
   <!-- NUGET ONLY PROPERTIES -->
   <PropertyGroup>
-    <PackageId>AppVeyorUmbracoPackage</PackageId>
-    <Copyright>The Umbraco Community</Copyright>
-    <Owners>The Umbraco Community</Owners>
-    <IconUrl>https://raw.githubusercontent.com/Jeavon/Umbraco-Core-Property-Value-Converters/master/PropertyValueConverters.png</IconUrl>
+    <PackageId>UmbracoAuditViewer</PackageId>
+    <Copyright>Stefano Chiodino</Copyright>
+    <Owners>Stefano Chiodino</Owners>
+    <IconUrl>http://www.freeiconspng.com/uploads/search-icon-png-21.png</IconUrl>
     <Tags>umbraco</Tags>
     <Language>en-GB</Language>
     <RequireLicenseAcceptance>false</RequireLicenseAcceptance>
