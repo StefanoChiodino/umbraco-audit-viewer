@@ -6,9 +6,9 @@ using System.Web.Routing;
 using Umbraco.Core;
 using Umbraco.Web;
 using Umbraco.Web.UI.JavaScript;
-using UmbracoAuditViewer.App_Plugins.Audit.Controllers;
+using UmbracoAuditViewer.Controllers;
 
-namespace UmbracoAuditViewer.App_Plugins.Audit
+namespace UmbracoAuditViewer
 {
     public class AuditApplicationEventHandler : ApplicationEventHandler
     {

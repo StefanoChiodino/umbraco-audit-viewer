@@ -317,10 +317,10 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Plugins\Audit\AuditApplicationEventHandler.cs" />
-    <Compile Include="App_Plugins\Audit\AuditSection.cs" />
-    <Compile Include="App_Plugins\Audit\Controllers\AuditController.cs" />
-    <Compile Include="App_Plugins\Audit\Controllers\AuditTreeController.cs" />
+    <Compile Include="AuditApplicationEventHandler.cs" />
+    <Compile Include="AuditSection.cs" />
+    <Compile Include="Controllers\AuditController.cs" />
+    <Compile Include="Controllers\AuditTreeController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <PropertyGroup>

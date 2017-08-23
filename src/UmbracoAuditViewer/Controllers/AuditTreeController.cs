@@ -10,7 +10,7 @@ using Umbraco.Web.Models.Trees;
 using Umbraco.Web.Mvc;
 using Umbraco.Web.Trees;
 
-namespace UmbracoAuditViewer.App_Plugins.Audit.Controllers
+namespace UmbracoAuditViewer.Controllers
 {
     [Tree("audit", "audit", "Audit", sortOrder: 0)]
     [PluginController("Audit")]

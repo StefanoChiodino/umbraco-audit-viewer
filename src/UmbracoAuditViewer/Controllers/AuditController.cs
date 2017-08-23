@@ -7,7 +7,7 @@ using Umbraco.Core.Models;
 using Umbraco.Core.Models.Membership;
 using Umbraco.Web.Editors;
 
-namespace UmbracoAuditViewer.App_Plugins.Audit.Controllers
+namespace UmbracoAuditViewer.Controllers
 {
     public class AuditController : UmbracoAuthorizedJsonController
     {

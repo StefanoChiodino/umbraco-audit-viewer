@@ -2,7 +2,7 @@
 using umbraco.interfaces;
 using Umbraco.Web.Mvc;
 
-namespace UmbracoAuditViewer.App_Plugins.Audit
+namespace UmbracoAuditViewer
 {
     [Application("audit", "audit", "Audit", sortOrder: 8)]
     [PluginController("Audit")]
