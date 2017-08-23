@@ -8,23 +8,15 @@ using Umbraco.Web;
 using Umbraco.Web.UI.JavaScript;
 using UmbracoAuditViewer.Controllers;
 
-namespace UmbracoAuditViewer
+namespace UmbracoAuditViewer.EventHandlers
 {
-    public class AuditApplicationEventHandler : ApplicationEventHandler
+    public class AddJavascriptServerVariable : ApplicationEventHandler
     {
         protected override void ApplicationStarting(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)
         {
             base.ApplicationStarting(umbracoApplication, applicationContext);
 
             ServerVariablesParser.Parsing += AddAuditControllerBaseUrlToServerVariables;
-        }
-
-        protected override void ApplicationStarted(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)
-        {
-            base.ApplicationStarted(umbracoApplication, applicationContext);
-
-            applicationContext.Services.SectionService.MakeNew(
-                Constants.ApplicationName, Constants.ApplicationAlias, Constants.ApplicationIcon);
         }
 
         /// <summary>
