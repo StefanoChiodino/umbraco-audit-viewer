@@ -14,7 +14,17 @@ namespace UmbracoAuditViewer
     {
         protected override void ApplicationStarting(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)
         {
+            base.ApplicationStarting(umbracoApplication, applicationContext);
+
             ServerVariablesParser.Parsing += AddAuditControllerBaseUrlToServerVariables;
+        }
+
+        protected override void ApplicationStarted(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)
+        {
+            base.ApplicationStarted(umbracoApplication, applicationContext);
+
+            applicationContext.Services.SectionService.MakeNew(
+                "Audit", "audit", "icon-search");
         }
 
         /// <summary>

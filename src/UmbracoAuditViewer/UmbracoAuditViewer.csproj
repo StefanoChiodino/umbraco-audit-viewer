@@ -318,7 +318,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AuditApplicationEventHandler.cs" />
-    <Compile Include="AuditSection.cs" />
     <Compile Include="Controllers\AuditController.cs" />
     <Compile Include="Controllers\AuditTreeController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
