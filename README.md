@@ -5,7 +5,9 @@
 This is a better audit viewer for Umbraco.
 
 # Install #
-Use nuget: `Install-Package AppVeyorUmbracoPackage`
+Use nuget: `Install-Package UmbracoAuditViewer`
+
+Nuget link https://www.nuget.org/packages/UmbracoAuditViewer/
 
 # Config #
 Optionally you can add the comma separated node IDs that you want to restrict this tool to with the  key `Audit:RootNodeIds` in your `app.config` or `web.config`
