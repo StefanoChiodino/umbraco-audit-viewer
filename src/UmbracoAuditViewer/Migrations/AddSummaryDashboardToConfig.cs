@@ -9,15 +9,16 @@ namespace UmbracoAuditViewer.Migrations
     [Migration("1.0.0", 1, Constants.ApplicationAlias)]
     public class AddSummaryDashboardToConfig : MigrationBase
     {
-        private readonly addDashboardSection _packageAction;
-        private readonly XmlNode _xml;
+        private addDashboardSection _packageAction;
+        private XmlNode _xml;
 
         public AddSummaryDashboardToConfig(ISqlSyntaxProvider sqlSyntax, ILogger logger)
             : base(sqlSyntax, logger)
         {
             _packageAction = new addDashboardSection();
 
-            const string xml = @"
+            const string xml =
+@"<Action runat=""install"" alias=""addDashboardSection"" dashboardAlias=""Audit"">
   <section alias=""Audit"">
     <areas>
       <area>
@@ -29,7 +30,8 @@ namespace UmbracoAuditViewer.Migrations
         /app_plugins/Audit/Audit.html
       </control>
     </tab>
-  </section>";
+  </section>
+</Action>";
 
             var xdoc = new XmlDocument();
             xdoc.LoadXml(xml);
