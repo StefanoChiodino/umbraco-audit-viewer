@@ -44,30 +44,15 @@
   <Choose>
     <When Condition="$(APPVEYOR_BUILD_NUMBER) != ''">
       <PropertyGroup>
-        <Release>false</Release>
-      </PropertyGroup>
-    </When>
-    <Otherwise>
-      <PropertyGroup>
         <Release>true</Release>
       </PropertyGroup>
-    </Otherwise>
-  </Choose>
-
-  <Choose>
-    <When Condition="$(Release) == 'false' And $(UMBRACO_PACKAGE_PRERELEASE_SUFFIX) == 'rtm'">
-      <PropertyGroup>
-        <AbortBuild>true</AbortBuild>
-      </PropertyGroup>
     </When>
     <Otherwise>
       <PropertyGroup>
-        <AbortBuild>false</AbortBuild>
+        <Release>false</Release>
       </PropertyGroup>
     </Otherwise>
-  </Choose>
-
- 
+  </Choose> 
 
   <!-- PATHS -->
   <PropertyGroup>
@@ -82,7 +67,6 @@
 
   <!-- TARGETS -->
   <Target Name="GetProductVersion">
-    <Error Condition="$(AbortBuild) == 'true'" Text="Aborting the build as the UMBRACO_PACKAGE_PRERELEASE_SUFFIX suffix is set 'rtm' but APPVEYOR_REPO_TAG is not 'true'" />
     <GetProductVersion BuildVersion="$(APPVEYOR_BUILD_VERSION)" BuildSuffix="$(UMBRACO_PACKAGE_PRERELEASE_SUFFIX)" Release="$(Release)">
       <Output TaskParameter="ProductVersion" PropertyName="ProductVersion"/>
     </GetProductVersion>
