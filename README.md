@@ -5,7 +5,7 @@
 This is a better audit viewer for Umbraco.
 
 # Install #
-Use nuget: `Install-Package UmbracoAuditViewer -Version 1.1.6-alpha-000017`
+Use nuget: `Install-Package UmbracoAuditViewer`
 
 Nuget link https://www.nuget.org/packages/UmbracoAuditViewer/
 
